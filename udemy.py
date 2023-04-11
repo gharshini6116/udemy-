@@ -8,7 +8,7 @@ from PIL import Image
 logo = Image.open('logo.png')
 #pip install pandas numpy matplotlib seaborn streamlit
 #to run strealit :   streamlit run test2.py 
-st.set_page_config(page_title="NetFlix  EDA", page_icon=":bar_chart:", layout="wide")
+st.set_page_config(page_title="udemy  EDA", page_icon=":bar_chart:", layout="wide")
 st.image(logo)
 # Define the list of names
 names = ["21A21A6116-G.HARSHINI", "21A21A6146-P.VINAY", "21A21A6101(l1)-B.SATISH KUMAR","21A21A6125-K.VENKATA LAKSHMI","22A21A6160-V.CHANDRIKA YESASWINI","21A21A6147-P.RAKESH","21A21A6115-G.VENKATA VINAY"]
@@ -119,8 +119,10 @@ if show_q15:
     ax.set_xlabel("Number of courses")
     ax.set_ylabel("Subject")
     st.pyplot(fig)
-    
-
+show_q16 = st.checkbox("Show subject with the minimum number of courses?")
+if show_q16:
+    st.write("Subject with the minimum number of courses:")
+    st.write(data.subject.value_counts().idxmin())
 
 
 
